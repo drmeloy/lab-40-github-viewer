@@ -55,3 +55,18 @@ export const getPrs = url => {
       };
     });
 };
+
+export const getIssues = url => {
+  return fetch(url)
+    .then(res => Promise.all([res.ok, res.json()]))
+    .then(([ok, data]) => {
+      if(!ok){
+        throw data;
+      }
+      return {
+        title: data.title,
+        state: data.state,
+        url: data.html_url
+      };
+    });
+};

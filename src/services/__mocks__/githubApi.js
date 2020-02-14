@@ -30,3 +30,14 @@ export const getPrs = url => {
     }
   ]);
 };
+
+export const getIssues = url => {
+  return Promise.resolve([
+    {
+      name: 'A huge issue'
+    },
+    {
+      name: 'The biggest issue'
+    }
+  ]);
+};
