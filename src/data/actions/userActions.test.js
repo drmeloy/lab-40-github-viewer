@@ -8,9 +8,9 @@ describe('user actions', () => {
     const action = fetchUser('username');
     return action(dispatch)
       .then(() => {
-        expect(dispatch).toHaveBeenCalledWith(({
+        expect(dispatch).toHaveBeenCalledWith({
           type: FETCH_USER_LOADING
-        }));
+        });
         expect(dispatch).toHaveBeenCalledWith({
           type: FETCH_USER,
           payload: {
