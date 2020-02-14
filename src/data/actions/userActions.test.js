@@ -17,8 +17,7 @@ describe('user actions', () => {
             id: 1,
             name: 'Megaman'
           }
-        })
-        
-      })
+        });
+      });
   });
 });

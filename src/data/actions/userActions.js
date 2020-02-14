@@ -9,4 +9,4 @@ export const fetchUser = username => dispatch => {
       type: FETCH_USER,
       payload: user
     }));
-}
+};
