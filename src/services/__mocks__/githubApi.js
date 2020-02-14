@@ -5,6 +5,19 @@ export const getUser = username  => {
   });
 };
 
+export const getRepos = url => {
+  return Promise.resolve([
+    {
+      name: 'Mega repo',
+      description: 'Super mega'
+    },
+    {
+      name: 'Super repo',
+      description: 'Mega super'
+    }
+  ]);
+};
+
 export const getPrs = url => {
   return Promise.resolve([
     {

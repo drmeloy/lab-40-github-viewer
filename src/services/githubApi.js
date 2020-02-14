@@ -26,7 +26,7 @@ export const getUser = username => {
     });
 };
 
-export const getPrs = url => {
+export const getRepos = url => {
   return fetch(url)
     .then(res => Promise.all([res.ok, res.json()]))
     .then(([ok, data]) => {
@@ -36,6 +36,21 @@ export const getPrs = url => {
       return {
         name: data.name,
         description: data.description,
+        url: data.html_url
+      };
+    });
+};
+
+export const getPrs = url => {
+  return fetch(url)
+    .then(res => Promise.all([res.ok, res.json()]))
+    .then(([ok, data]) => {
+      if(!ok){
+        throw data;
+      }
+      return {
+        title: data.title,
+        state: data.state,
         url: data.html_url
       };
     });
