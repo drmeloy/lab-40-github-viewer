@@ -6,7 +6,6 @@ export const getUser = username => {
         throw data;
       }
       return {
-        id: data.id,
         username: data.login,
         name: data.name,
         company: data.company,
@@ -18,22 +17,20 @@ export const getUser = username => {
         url: data.html_url,
         numFollowers: data.followers,
         numFollowing: data.following,
-        followers_url: data.followers_url,
-        following_url: data.following_url,
-        repos_url: data.repos_url,
-        organizations_url: data.organizations_url
+        repos_url: data.repos_url
       };
     });
 };
 
-export const getRepos = url => {
-  return fetch(url)
+export const getRepos = username => {
+  return fetch(`https://api.github.com/users/${username}/repos`)
     .then(res => Promise.all([res.ok, res.json()]))
     .then(([ok, data]) => {
       if(!ok){
         throw data;
       }
       return {
+        id: data.id,
         name: data.name,
         description: data.description,
         url: data.html_url
@@ -49,6 +46,7 @@ export const getPrs = url => {
         throw data;
       }
       return {
+        id: data.id,
         title: data.title,
         state: data.state,
         url: data.html_url
@@ -64,6 +62,7 @@ export const getIssues = url => {
         throw data;
       }
       return {
+        id: data.id,
         title: data.title,
         state: data.state,
         url: data.html_url
