@@ -1,6 +1,9 @@
 import { FETCH_PRS_LOADING, FETCH_PRS } from '../actions/prActions';
 
-const initialState = [];
+const initialState = {
+  loading: true,
+  prs: []
+};
 
 export default function prReducer(state = initialState, action){
   switch(action.type){

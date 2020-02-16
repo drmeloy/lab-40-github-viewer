@@ -10,7 +10,6 @@ export const getUser = username => {
         name: data.name,
         company: data.company,
         location: data.location,
-        email: data.email,
         bio: data.bio,
         numRepos: data.public_repos,
         img: data.avatar_url,
@@ -33,39 +32,41 @@ export const getRepos = username => {
         id: repo.id,
         name: repo.name,
         description: repo.description,
-        url: repo.html_url
+        url: repo.html_url,
+        issues: repo.issues_url,
+        pulls: repo.pulls_url
       }));
     });
 };
 
-export const getPrs = url => {
-  return fetch(url)
+export const getPrs = repo => {
+  return fetch(`https://api.github.com/repos/drmeloy/${repo}/pulls`)
     .then(res => Promise.all([res.ok, res.json()]))
     .then(([ok, data]) => {
       if(!ok){
         throw data;
       }
-      return {
-        id: data.id,
-        title: data.title,
-        state: data.state,
-        url: data.html_url
-      };
+      return data.map(pull => ({
+        id: pull.id,
+        title: pull.title,
+        state: pull.state,
+        url: pull.html_url
+      }));
     });
 };
 
-export const getIssues = url => {
-  return fetch(url)
+export const getIssues = repo => {
+  return fetch(`https://api.github.com/repos/drmeloy/${repo}/issues`)
     .then(res => Promise.all([res.ok, res.json()]))
     .then(([ok, data]) => {
       if(!ok){
         throw data;
       }
-      return {
-        id: data.id,
-        title: data.title,
-        state: data.state,
-        url: data.html_url
-      };
+      return data.map(issue => ({
+        id: issue.id,
+        title: issue.title,
+        state: issue.state,
+        url: issue.html_url
+      }));
     });
 };

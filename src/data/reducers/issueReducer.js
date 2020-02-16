@@ -1,6 +1,9 @@
 import { FETCH_ISSUES_LOADING, FETCH_ISSUES } from '../actions/issueActions';
 
-const initialState = [];
+const initialState = {
+  loading: true,
+  issues: []
+};
 
 export default function issueReducer(state = initialState, action){
   switch(action.type){
