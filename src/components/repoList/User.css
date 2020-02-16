@@ -1,0 +1,22 @@
+.User {
+  width: 48vw;
+  margin-top: 15px;
+  border: 1px solid;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  img {
+    width: 50%;
+    margin-top: 18px;
+  }
+
+  p {
+    text-align: center;
+    margin:10px;
+  }
+}

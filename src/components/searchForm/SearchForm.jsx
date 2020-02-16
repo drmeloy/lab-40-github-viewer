@@ -7,7 +7,8 @@ export default function SearchForm(){
   const [query, setQuery] = useState('');
   const dispatch = useDispatch();
 
-  const getUserData = () => {
+  const getUserData = event => {
+    event.preventDefault();
     dispatch(fetchUser(query));
     dispatch(fetchRepos(query));
   };
@@ -15,8 +16,10 @@ export default function SearchForm(){
   return (
     <>
       <h1>Search Github by Github username:</h1>
-      <input type='text' placeholder='Github username' onChange={({ target }) => setQuery(target.value)} />
-      <button onClick={getUserData} >Search Github</button>
+      <form onSubmit={getUserData}>
+        <input type='text' placeholder='Github username' onChange={({ target }) => setQuery(target.value)} />
+        <button>Search Github</button>
+      </form>
     </>
   );
 }
