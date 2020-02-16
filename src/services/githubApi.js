@@ -29,12 +29,12 @@ export const getRepos = username => {
       if(!ok){
         throw data;
       }
-      return {
-        id: data.id,
-        name: data.name,
-        description: data.description,
-        url: data.html_url
-      };
+      return data.map(repo => ({
+        id: repo.id,
+        name: repo.name,
+        description: repo.description,
+        url: repo.html_url
+      }));
     });
 };
 

@@ -17,9 +17,9 @@ export default function RepoList(){
   return (
     <>
       <User />
-      <ul>
+      {repoList && <ul>
         {repoList}
-      </ul>
+      </ul> }
     </>
   );
 }
