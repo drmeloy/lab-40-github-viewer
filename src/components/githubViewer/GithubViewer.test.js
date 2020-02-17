@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SearchForm from './SearchForm';
+import GithubViewer from './GithubViewer';
 import { Provider } from 'react-redux';
 import store from '../../store';
 
-describe('SearchForm component', () => {
+describe('GithubViewer component', () => {
   it('matches snapshot', () => {
-    const wrapper = shallow(<Provider store={store}><SearchForm /></Provider>);
+    const wrapper = shallow(<Provider store={store}><GithubViewer /></Provider>);
     expect(wrapper).toMatchSnapshot();
   });
 });

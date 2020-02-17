@@ -18,10 +18,13 @@ export default function PrList(){
 
   return (
     <>
-      {prList.length > 0 && 
-      <ul className={styles.PrList}>
-        {prList}
-      </ul> }
+      {prList.length > 0 &&
+      <section>
+        <h2>PRs:</h2>
+        <ul className={styles.PrList}>
+          {prList}
+        </ul>
+      </section> }
     </>
   );
 }

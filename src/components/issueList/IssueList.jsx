@@ -19,9 +19,12 @@ export default function IssueList(){
   return (
     <>
       {issueList.length > 0 && 
-      <ul className={styles.IssueList}>
-        {issueList}
-      </ul>}
+      <section>
+        <h2>Issues:</h2>
+        <ul className={styles.IssueList}>
+          {issueList}
+        </ul>
+      </section> }
     </>
   );
 }
