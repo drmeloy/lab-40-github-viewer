@@ -14,8 +14,8 @@ export default function RepoList(){
   const dispatch = useDispatch();
 
   const handleClick = repo => {
-    dispatch(fetchPrs(repo, user.username));
     dispatch(fetchIssues(repo, user.username));
+    dispatch(fetchPrs(repo, user.username));
   };
 
   const repoList = repos.map(repo => (

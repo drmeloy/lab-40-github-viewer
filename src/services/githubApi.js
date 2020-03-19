@@ -66,7 +66,7 @@ export const getIssues = (repo, username) => {
         id: issue.id,
         title: issue.title,
         state: issue.state,
-        url: issue.html_url
+        url: issue.url
       }));
     });
 };
