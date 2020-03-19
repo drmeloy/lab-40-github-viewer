@@ -1,0 +1,7 @@
+.RepoSection {
+  display: flex;
+}
+
+.RepoInfo {
+  margin-left: 15px;
+}

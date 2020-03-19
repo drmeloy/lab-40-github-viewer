@@ -1,6 +1,6 @@
 import React from 'react';
+import GithubViewer from './githubViewer/GithubViewer';
 
 export default function App() {
-  return <h1>Hello World</h1>;
+  return <GithubViewer />;
 }
-  

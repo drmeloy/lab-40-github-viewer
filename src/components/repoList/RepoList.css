@@ -1,0 +1,20 @@
+.RepoList {
+  list-style: none;
+  border: 1px solid;
+  padding: 0;
+  width: 48vw;
+
+  li {
+    border: 1px solid;
+    padding: 15px
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+}
