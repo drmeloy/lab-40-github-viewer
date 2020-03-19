@@ -3,12 +3,3 @@ body, html {
   padding: 0;
   box-sizing: border-box;
 }
-
-body {
-  display: grid;
-  grid-template-columns: 48vw 48vw;
-  grid-template-rows: auto;
-  grid-template-areas: 
-    "usersearch prs"
-    "repos issues";
-}

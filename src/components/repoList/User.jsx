@@ -9,7 +9,7 @@ export default function User(){
   
   if(!user){
     return (
-      <h1></h1>
+      <p>Input a Github username above to pull up that user&apos;s profile and repositories. </p>
     );
   }
 

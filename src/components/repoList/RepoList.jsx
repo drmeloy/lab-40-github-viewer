@@ -19,7 +19,7 @@ export default function RepoList(){
     <li key={repo.id}>
       <div>
         <h3>{repo.name}</h3>
-        <button onClick={handleClick(repo.name)}>Examine PRs and Issues</button>
+        <button onClick={() => handleClick(repo.name)}>Examine PRs and Issues</button>
       </div>
       <p>{repo.description}</p>
       <a href={repo.url}>{repo.url}</a>

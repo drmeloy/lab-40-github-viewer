@@ -3,14 +3,17 @@ import SearchForm from '../searchForm/SearchForm';
 import RepoList from '../repoList/RepoList';
 import PrList from '../prList/PrList';
 import IssueList from '../issueList/IssueList';
+import styles from './GithubViewer.css';
 
 export default function GithubViewer(){
   return (
     <>
       <SearchForm />
-      <RepoList />
-      <PrList />
-      <IssueList />
+      <div className={styles.RepoSection}>
+        <RepoList />
+        <PrList />
+        <IssueList />
+      </div>
     </>
   );
 }
