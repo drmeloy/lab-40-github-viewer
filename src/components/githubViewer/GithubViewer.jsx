@@ -11,8 +11,10 @@ export default function GithubViewer(){
       <SearchForm />
       <div className={styles.RepoSection}>
         <RepoList />
-        <PrList />
-        <IssueList />
+        <div className={styles.RepoInfo}>
+          <PrList />
+          <IssueList />
+        </div>
       </div>
     </>
   );
