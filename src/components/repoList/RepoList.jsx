@@ -4,15 +4,18 @@ import { selectRepos } from '../../data/selectors/repoSelectors';
 import styles from './RepoList.css';
 import { fetchPrs } from '../../data/actions/prActions';
 import { fetchIssues } from '../../data/actions/issueActions';
+import { selectUser } from '../../data/selectors/userSelectors';
 
 export default function RepoList(){
   const state = useSelector(state => state);
   const repos = selectRepos(state);
+  const user = selectUser(state);
+  
   const dispatch = useDispatch();
 
   const handleClick = repo => {
-    dispatch(fetchPrs(repo));
-    dispatch(fetchIssues(repo));
+    dispatch(fetchPrs(repo, user.username));
+    dispatch(fetchIssues(repo, user.username));
   };
 
   const repoList = repos.map(repo => (

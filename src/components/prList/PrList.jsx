@@ -10,7 +10,7 @@ export default function PrList(){
     <li key={pr.id}>
       <div>
         <h3>{pr.title}</h3>
-        <p>{pr.state}</p>
+        <p>PR status: {pr.state}</p>
       </div>
       <a href={pr.url}>{pr.url}</a>
     </li>

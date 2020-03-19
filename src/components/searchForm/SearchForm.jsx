@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { fetchUser } from '../../data/actions/userActions';
 import { fetchRepos } from '../../data/actions/repoActions';
 import User from '../repoList/User';
+import styles from './SearchForm.css';
 
 export default function SearchForm(){
   const [query, setQuery] = useState('');
@@ -21,7 +22,9 @@ export default function SearchForm(){
         <input type='text' placeholder='Github username' onChange={({ target }) => setQuery(target.value)} />
         <button>Search Github</button>
       </form>
-      <User />
+      <div className={styles.User}>
+        <User />
+      </div>
     </>
   );
 }

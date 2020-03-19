@@ -39,8 +39,8 @@ export const getRepos = username => {
     });
 };
 
-export const getPrs = repo => {
-  return fetch(`https://api.github.com/repos/drmeloy/${repo}/pulls`)
+export const getPrs = (repo, username) => {
+  return fetch(`https://api.github.com/repos/${username}/${repo}/pulls`)
     .then(res => Promise.all([res.ok, res.json()]))
     .then(([ok, data]) => {
       if(!ok){
@@ -55,8 +55,8 @@ export const getPrs = repo => {
     });
 };
 
-export const getIssues = repo => {
-  return fetch(`https://api.github.com/repos/drmeloy/${repo}/issues`)
+export const getIssues = (repo, username) => {
+  return fetch(`https://api.github.com/repos/${username}/${repo}/issues`)
     .then(res => Promise.all([res.ok, res.json()]))
     .then(([ok, data]) => {
       if(!ok){

@@ -6,6 +6,7 @@ import styles from './IssueList.css';
 export default function IssueList(){
   const state = useSelector(state => state);
   const issues = selectIssues(state);
+  
   const issueList = issues.map(issue => (
     <li key={issue.id}>
       <div>

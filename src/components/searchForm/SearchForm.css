@@ -1,8 +1,4 @@
-.RepoSection {
-  display: grid;
-  grid-template-columns: 48vw 48vw;
-  grid-template-rows: auto;
-  grid-template-areas: 
-    "repos prs"
-    "repos issues";
+.User {
+  display: flex;
+  justify-content: center;
 }
